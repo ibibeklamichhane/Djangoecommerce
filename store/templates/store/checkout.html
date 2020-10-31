@@ -1,1 +1,51 @@
-<h3>checkout</h3>
+{% extends 'store/main.html' %}
+{% load static %}
+{% block content %}
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="box-element" >
+                
+                    <form id="form">
+                        <div id="user-info">
+                            <div class="form-field">
+                                <input required class="form-control" type="text" name="name" placeholder="Name..">
+                            </div>
+                            <div class="form-field">
+                                <input required class="form-control" type="email" name="email" placeholder="Email..">
+                            </div>
+                        </div>
+
+                        <div id="shipping-info">
+                            <hr>
+                            <p>Shoppping Information</p>
+                            </hr>
+                            <div class="form-field">
+                                <input class="form-control" type="text" name="address" placeholder="Name">
+                            </div>
+                            
+                            <div class="form-field">
+                                <input class="form-control" type="text" name="city" placeholder="city">
+                            </div>
+                            <div class="form-field">
+                                <input class="form-control" type="text" name="state" placeholder="state">
+                            </div>
+                            <div class="form-field">
+                                <input class="form-control" type="country" name="zipcode" placeholder="zipcode">
+                            </div>
+                            <div class="form-field">
+                                <input class="form-control" type="text" name="country" placeholder="countru">
+                            </div>
+                        </div>
+                    </form>
+
+            </div>
+            
+        </div>
+
+        <div class="col-lg-6">
+            <div class="box-element">
+
+            </div>
+        </div>
+    </div>
+{% endblock content %}
