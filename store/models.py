@@ -20,25 +20,25 @@ class Product(models.Model):
 
 class Order(models.Model):
     customer = models.ForeignKey(Customer, on_delete=models.CASCADE)
-    date_ordered = models.DateTimeField(auto_now,add = true)
+    date_ordered = models.DateTimeField(auto_now_add = True)
     complete = models.BooleanField(default=False,null=True,blank=False)
-    transition_id = models.CharField(max_length=100,null = true)
+    transition_id = models.CharField(max_length=100,null = True)
 
     def __str__(self):
         return str(self.id)
 
 class OrderItem(models.Model):
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
-    order = models.ForeignKey(Order,on_delete = models.CASCAFDE)
+    order = models.ForeignKey(Order,on_delete = models.CASCADE)
     quantity = models.IntegerField(default=0)
-    date_added = models.DateTimeField(auto.now_add =True)
+    date_added = models.DateTimeField(auto_now_add =True)
 
 
 class ShippingAddress(models.Model):
     customer = models.ForeignKey(Customer, on_delete=models.CASCADE)
-    order = models.ForeignKey(Order,on_delete = models.CASCAFDE)
-    address = models.CharField(max_length=100)
-    city = models.charField(max_length= 100)
+    order = models.ForeignKey(Order,on_delete = models.CASCADE)
+    address = models.CharField(max_length=50)
+    city = models.CharField(max_length= 100)
     zipcode = models.CharField(max_length = 100)
     date_added =models.DateTimeField(auto_now_add = True)
 
