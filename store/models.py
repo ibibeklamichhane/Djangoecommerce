@@ -13,10 +13,11 @@ class Product(models.Model):
     name = models.CharField(max_length=50)
     price = models.FloatField()
     digital= models.BooleanField(default=True,null=True)
-    #iamge
+    image = models.ImageField(null=True,blank=True)
 
     def __str__(self):
         return self.name
+ 
 
 class Order(models.Model):
     customer = models.ForeignKey(Customer, on_delete=models.CASCADE)
