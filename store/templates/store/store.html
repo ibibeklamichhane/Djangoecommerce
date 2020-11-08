@@ -2,48 +2,28 @@
 {% load static %}
 
 {% block content %}
-	<div>
-		<div class="row">
-			<div class="col-lg-4">
-				<img class="thumbnail" src="{%  %}">
-				
-				<div class="box-element product">
-					<h6><strong>product</strong></h6>
-					<hr>
-					<button class="btn-outline-primary add-btn">ADD to cart</button>
-					<a class="btn btn-outline-success" href="#">View</a>
-					<h4 style="display: inline-block; float: right;">rs45 </h4>
+	<div class="row">
+		{% for product in products %}
+		<div class="col-lg-4">
+			<img class="thumbnail" src="{{product.image.url}}">
+			
+			<div class="box-element product">
+				<h6><strong>{{ product.name}}</strong></h6>
+				<hr>
+				<button class="btn-outline-primary add-btn">ADD to cart</button>
+				<a class="btn btn-outline-success" href="">View</a>
+				<h4 style="display: inline-block; float: right;">rs{{ product.price|floatformat:2}} </h4>
 
-				</div>
 			</div>
-
-			<div class="col-lg-4">
-				<img class="thumbnail" src="{% static 'images/resolution.png' %}">
-				<div class="box-element product">
-					<h6><strong>product</strong></h6>
-					<hr>
-					<button class="btn-outline-primary add-btn">ADD to cart</button>
-					<a class="btn btn-outline-success" href="#">View</a>
-					<h4 style="display: inline-block; float: right;">rs45 </h4>
-
-					
-				</div>
-			</div>
-
-			<div class="col-lg-4">
-				<img class="thumbnail" src="{% static 'images/resolution.png' %}">
-				<div class="box-element product">
-					<h6><strong>product</strong></h6>
-					<hr>
-					<button class="btn-outline-primary add-btn">ADD to cart</button>
-					<a class="btn btn-outline-success" href="#">View</a>
-					<h4 style="display: inline-block; float: right;">rs45 </h4>
-
-
-				</div>
-			</div>
+		{% endfor %}
 		</div>
+
+		
+			
+			
+		
 	</div>
+
 {% endblock content %}
 
 
